@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>云南滇西边境11天深度游计划</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; 
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* 移动端基础优化 */
+        @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+            
+            /* 标题优化 */
+            h1 { font-size: 1.75rem !important; line-height: 1.3; }
+            h2 { font-size: 1.5rem !important; line-height: 1.3; }
+            h3 { font-size: 1.25rem !important; }
+            h4 { font-size: 1.1rem !important; }
+            
+            /* 标签页按钮 - 移动端更小，可横向滚动 */
+            #dayTabs {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                justify-content: flex-start !important;
+                padding-bottom: 8px;
+            }
+            #dayTabs::-webkit-scrollbar {
+                display: none;
+            }
+            .day-tab {
+                flex-shrink: 0;
+                padding: 0.5rem 1rem !important;
+                font-size: 0.875rem !important;
+                min-width: 60px;
+            }
+            
+            /* 卡片内边距优化 */
+            .rounded-3xl {
+                padding: 1rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .rounded-2xl {
+                padding: 1rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .rounded-xl {
+                padding: 1rem !important;
+            }
+            
+            /* 导航按钮 - 触摸友好 */
+            .nav-btn {
+                min-height: 44px;
+                padding: 0.75rem 1rem !important;
+                font-size: 0.9rem !important;
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* 图标大小 */
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+            
+            /* 间距优化 */
+            .mb-8 { margin-bottom: 1.5rem !important; }
+            .mb-6 { margin-bottom: 1rem !important; }
+            .mb-4 { margin-bottom: 0.75rem !important; }
+            .py-12 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+            .py-16 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+            .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-4 { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+            
+            /* Hero区域优化 */
+            .text-5xl { font-size: 1.75rem !important; }
+            .text-2xl { font-size: 1.25rem !important; }
+            .text-lg { font-size: 1rem !important; }
+            
+            /* 信息标签 */
+            .rounded-full {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.85rem !important;
+            }
+            
+            /* 住宿卡片网格 */
+            .grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* 预算卡片网格 */
+            .md\:grid-cols-5 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            /* 实用信息网格 */
+            .md\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        .day-tab { 
+            transition: all 0.3s ease; 
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+        .day-tab.active { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; 
+            transform: scale(1.05); 
+        }
+        .day-content { 
+            display: none; 
+            animation: fadeIn 0.5s; 
+        }
+        .day-content.active { 
+            display: block; 
+        }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        .nav-btn { 
+            transition: all 0.2s; 
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .nav-btn:active { 
+            background-color: #f59e0b !important; 
+            transform: scale(0.98); 
+        }
+        .section-card { 
+            transition: all 0.3s; 
+        }
+        .section-card:active { 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+        }
+        
+        /* 防止移动端双击缩放 */
+        * {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        
+        /* 移动端标题行优化 */
+        @media (max-width: 768px) {
+            .flex.items-center {
+                flex-wrap: wrap;
+            }
+            .flex.items-center h2 {
+                width: 100%;
+                margin-left: 0 !important;
+                margin-top: 0.5rem;
+            }
+            .flex.items-center span.ml-auto {
+                margin-left: 0 !important;
+                margin-top: 0.5rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100">
+    
+    <!-- 顶部Hero区 -->
+    <div class="bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white py-8 md:py-16 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6">🌄 云南滇西边境11天深度游</h1>
+            <p class="text-lg md:text-2xl mb-3 md:mb-4 opacity-90">芒市 → 瑞丽 → 畹町 → 腾冲 → 盈江</p>
+            <p class="text-sm md:text-lg opacity-80 mb-6 md:mb-8">东南亚风情 · 边境跨国 · 热带雨林 · 火山地热 · 千年古镇</p>
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mt-4 md:mt-8">
+                <div class="bg-white/20 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base">
+                    <i class="fas fa-calendar-alt mr-2"></i>最佳时间：11月-2月
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base">
+                    <i class="fas fa-temperature-low mr-2"></i>气温：15-25℃
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base">
+                    <i class="fas fa-wallet mr-2"></i>预算：7000-9000元/人
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 天数导航标签 -->
+    <div class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-2 md:px-4 py-2 md:py-4">
+            <div class="flex flex-wrap md:flex-wrap gap-2 justify-center md:justify-center overflow-x-auto" id="dayTabs">
+                <button onclick="showDay(1)" class="day-tab active px-6 py-3 bg-purple-500 text-white rounded-full font-semibold">Day 1</button>
+                <button onclick="showDay(2)" class="day-tab px-6 py-3 bg-purple-500 text-white rounded-full font-semibold">Day 2</button>
+                <button onclick="showDay(3)" class="day-tab px-6 py-3 bg-purple-500 text-white rounded-full font-semibold">Day 3</button>
+                <button onclick="showDay(4)" class="day-tab px-6 py-3 bg-pink-500 text-white rounded-full font-semibold">Day 4</button>
+                <button onclick="showDay(5)" class="day-tab px-6 py-3 bg-pink-500 text-white rounded-full font-semibold">Day 5</button>
+                <button onclick="showDay(6)" class="day-tab px-6 py-3 bg-orange-500 text-white rounded-full font-semibold">Day 6</button>
+                <button onclick="showDay(7)" class="day-tab px-6 py-3 bg-red-500 text-white rounded-full font-semibold">Day 7</button>
+                <button onclick="showDay(8)" class="day-tab px-6 py-3 bg-red-500 text-white rounded-full font-semibold">Day 8</button>
+                <button onclick="showDay(9)" class="day-tab px-6 py-3 bg-red-500 text-white rounded-full font-semibold">Day 9</button>
+                <button onclick="showDay(10)" class="day-tab px-6 py-3 bg-teal-500 text-white rounded-full font-semibold">Day 10</button>
+                <button onclick="showDay(11)" class="day-tab px-6 py-3 bg-teal-500 text-white rounded-full font-semibold">Day 11</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="max-w-7xl mx-auto px-3 md:px-4 py-6 md:py-12">
+
+        <!-- Day 1 Content -->
+        <div id="day1" class="day-content active">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-purple-500">
+                    <span class="bg-purple-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 1</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">芒市初印象</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 芒市</span>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-purple-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:30-12:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-purple-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">勐焕金银塔</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">芒市标志性建筑，大金塔金光闪闪，银塔通体银白，上午光线柔和，适合拍照，人相对较少，可避开下午的人流高峰。</p>
+<div class="flex gap-3 flex-wrap">
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.629370,24.379673&name=勐焕大金塔&src=mypage')" 
+                                        class="nav-btn bg-purple-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航到勐焕大金塔
+                                </button>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.629370,24.381327&name=勐焕银塔&src=mypage')" 
+                                        class="nav-btn bg-purple-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航到勐焕银塔
+                                </button>
+</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-purple-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-purple-500"></i>从团结大街民宿骑电动车前往，约20分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (12:30-13:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">小瓦碴餐厅</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：菠萝饭、泰式虾球、口袋豆腐、泡鲁达</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">农家小院环境惬意，菜品具有东南亚特色，口味独特。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.590000,24.395000&name=小瓦碴餐厅&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午 (14:00-17:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">菩提街（团结大街）</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">整条街都是棕榈树和椰树，充满东南亚风情，可漫步欣赏街景，拍照打卡。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.588000,24.433000&name=菩提街（团结大街）&src=mypage')" 
+                                        class="nav-btn bg-blue-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-blue-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-blue-500"></i>从餐厅步行前往，约10分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-indigo-700 flex items-center">
+                        <i class="fas fa-moon mr-2 md:mr-3 text-2xl md:text-3xl"></i>晚上 (18:30-20:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marked-alt text-indigo-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">新玩厂</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">有地名墙、涂鸦墙，适合打卡拍照，晚上是热闹的美食集市，可以品尝当地特色小吃。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.590000,24.400000&name=新玩厂&src=mypage')" 
+                                        class="nav-btn bg-indigo-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">韦希民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 250-400元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">房间宽敞明亮，配备私人影院投影和智能家居系统，院内有锦鲤池和咖啡店。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">寻木有宿民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 200-350元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">满池锦鲤的傣族风情小院，菠萝蜜树果实挂满枝头，可体验荡着秋千看日落的治愈时光。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">芒市遇见青旅</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 30-200元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">上下铺床位和家庭房可选，公共区域有台球桌和观影区，不定期组织美食探店活动。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Day 2 Content -->
+        <div id="day2" class="day-content ">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-purple-500">
+                    <span class="bg-purple-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 2</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">芒市民族风情体验</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 芒市</span>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-purple-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:30-11:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-purple-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">树包塔</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约1小时</p>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">💰 免费</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">神奇自然景观，大榕树将佛塔包裹，位于百斯特美食城附近，可顺路品尝美食。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.599383,24.395973&name=树包塔&src=mypage')" 
+                                        class="nav-btn bg-purple-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-purple-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-purple-500"></i>骑电动车前往，约15分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (12:00-13:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">户撒阿昌过手米线店</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：过手米线、鲜榨火龙果汁</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">正宗阿昌族风味，米线肉酱调味道地，搭配鲜榨火龙果汁绝佳。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.590000,24.396000&name=户撒阿昌过手米线店&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午 (13:30-17:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">芒晃村</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">💰 免费</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">免费的傣族古镇，建筑特色鲜明，随手一拍尽显本地民族特色，可以感受傣族的生活气息。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.585000,24.380000&name=芒晃村&src=mypage')" 
+                                        class="nav-btn bg-blue-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-blue-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-blue-500"></i>骑电动车前往，约30分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-indigo-700 flex items-center">
+                        <i class="fas fa-moon mr-2 md:mr-3 text-2xl md:text-3xl"></i>晚上 (18:00-19:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-utensils text-indigo-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">阿妙餐厅</h4>
+                                
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：酸木瓜炒牛肉、薄荷排骨、老奶洋芋、凉拌毛肚</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">开了多年的网红店，菜品口味正宗，深受游客和当地人喜爱。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.590000,24.395000&name=阿妙餐厅&src=mypage')" 
+                                        class="nav-btn bg-indigo-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition border-2 border-yellow-400">
+                            <h4 class="font-bold text-base md:text-lg mb-2">喜来眠民宿 ⭐推荐</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 300-500元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">超大落地窗能将满山绿植"框"进房间，清晨可被鸟鸣唤醒，提供山地骑行和徒步向导服务。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">韦希民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 250-400元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">房间宽敞明亮，配备私人影院投影和智能家居系统，院内有锦鲤池和咖啡店，儿童友好。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">寻木有宿民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 200-350元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">满池锦鲤的傣族风情小院，菠萝蜜树果实挂满枝头，适合喜欢安静田园氛围的游客。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Day 3 Content -->
+        <div id="day3" class="day-content ">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-purple-500">
+                    <span class="bg-purple-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 3</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">芒市自然风光与高端体验</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 芒市</span>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-purple-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:30-12:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-purple-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">勐巴娜西珍奇园 ⭐4A景区</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">犹如大自然博物馆，有百年古树、珍稀植物和散养孔雀，可以近距离接触自然。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.570000,24.410000&name=勐巴娜西珍奇园 ⭐4A景区&src=mypage')" 
+                                        class="nav-btn bg-purple-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-purple-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-purple-500"></i>骑电动车前往，约20分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (12:30-13:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">勐巴娜西酒店餐厅</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：东南亚自助美食</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">老牌四星酒店的餐厅，早餐提供东南亚自助美食，中午也有特色菜品，口味不错。</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午 (14:00-17:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">芒市好望角</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">视野开阔可俯瞰芒市，下午五六点能看到橘红色日落美景，拍照效果极佳。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.595000,24.405000&name=芒市好望角&src=mypage')" 
+                                        class="nav-btn bg-blue-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-blue-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-blue-500"></i>骑电动车前往，约30分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-indigo-700 flex items-center">
+                        <i class="fas fa-moon mr-2 md:mr-3 text-2xl md:text-3xl"></i>晚上 (18:30-19:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-utensils text-indigo-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">烂路早点</h4>
+                                
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：牛肉饵丝、红汤排骨</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">本地人常去的早餐店，晚上也营业，饵丝味道正宗，红汤排骨口感软烂。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.588000,24.394000&name=烂路早点&src=mypage')" 
+                                        class="nav-btn bg-indigo-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition border-2 border-purple-400">
+                            <h4 class="font-bold text-base md:text-lg mb-2">芒市孔雀湖花园酒店 ⭐⭐⭐⭐⭐</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 600-1200元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">五星级标准，湖景房可俯瞰孔雀湖全景，SPA中心采用当地特色草药疗愈，早餐提供东南亚自助美食。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">勐巴娜西酒店 ⭐⭐⭐⭐</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 300-500元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">老牌四星酒店，地理位置优越，周边美食云集，客房配备加湿器和助眠香薰。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">喜来眠民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 300-500元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">城郊半山民宿，超大落地窗将满山绿植"框"进房间，全屋地暖适合冬季入住。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Day 4 Content -->
+        <div id="day4" class="day-content ">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-pink-500">
+                    <span class="bg-pink-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 4</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">瑞丽边境文化探索</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 芒市 → 瑞丽</span>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 md:p-4 mb-4 md:mb-6 rounded-r-lg">
+                    <p class="text-yellow-800 text-sm md:text-base"><i class="fas fa-bus mr-2"></i><strong>跨区域交通：</strong>芒市到瑞丽，乘坐大巴约1.5小时，票价25元；或包车，适合多人出行，更加灵活。</p>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-pink-50 to-pink-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-pink-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:30-12:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-pink-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">一寨两国 🔥热门打卡</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">中缅边境独特村落，跨国秋千、国境线石碑是热门打卡点，可看到两国村民日常交融场景。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.866667,24.066667&name=一寨两国 🔥热门打卡&src=mypage')" 
+                                        class="nav-btn bg-pink-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-pink-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-pink-500"></i>从芒市乘坐大巴到瑞丽后，打车前往景点，约20分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (12:30-13:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">勐卯宴 ⭐网红餐厅</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：双味撒撇、菠萝饭、手剥笋</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">南亚东南亚特色民族餐厅，环境如傣家皇室后花园，菜品丰富，口味独特。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.855000,24.015000&name=勐卯宴 ⭐网红餐厅&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午 (14:00-17:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">姐告口岸</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">中缅贸易心脏地带，实行"境内关外"政策，可俯瞰联检大楼与跨境通道，夜晚灯光璀璨。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.869444,24.081111&name=姐告口岸&src=mypage')" 
+                                        class="nav-btn bg-blue-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-blue-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-blue-500"></i>打车前往，约15分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-indigo-700 flex items-center">
+                        <i class="fas fa-moon mr-2 md:mr-3 text-2xl md:text-3xl"></i>晚上 (18:00-19:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-utensils text-indigo-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">缅泰特优茶餐厅</h4>
+                                
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：红烧牛肉油面、咖喱饭</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">开了十年之久的老字号，招牌菜红烧牛肉油面和咖喱饭香气浓郁，口味地道。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.852000,24.012000&name=缅泰特优茶餐厅&src=mypage')" 
+                                        class="nav-btn bg-indigo-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition border-2 border-yellow-400">
+                            <h4 class="font-bold text-base md:text-lg mb-2">栖见管家式民宿 ⭐推荐</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 280-480元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">复式LOFT设计，厨房、洗衣机全配齐，可自己动手做饭，提供24小时管家服务和接送机。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">瑞丽悠渡客栈</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 180-300元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">别墅型民宿，福建老板热情好客，可免费帮忙预订车辆和当地特色美食，周边配套完善。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">瑞丽屿桥民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 320-550元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">拥军主题民宿，院子里有温顺的梅花鹿可互动拍照，配备健身房、私人电影院、棋牌室。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Day 5 Content -->
+        <div id="day5" class="day-content ">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-pink-500">
+                    <span class="bg-pink-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 5</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">瑞丽热带雨林与自然奇观</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 瑞丽</span>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-pink-50 to-pink-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-pink-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:30-12:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-pink-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">莫里热带雨林景区</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">保存完整的低纬度热带季雨林，莫里瀑布落差60米，负氧离子浓度高，是天然的森林氧吧。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.693611,24.093889&name=莫里热带雨林景区&src=mypage')" 
+                                        class="nav-btn bg-pink-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-pink-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-pink-500"></i>打车前往，约30分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (12:30-13:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">塔利斯餐厅</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：火山排骨、菠萝油条虾球</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">东南亚风格装修超适合拍照，特色菜品颇具创新，口味不错。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.856000,24.018000&name=塔利斯餐厅&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午 (14:00-16:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">独树成林</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约1.5小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">一棵900岁老榕树形成壮观独木林，气生根横跨小路，缅甸小孩常从此上学，可感受独特的边境人文景观。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.877778,24.090000&name=独树成林&src=mypage')" 
+                                        class="nav-btn bg-blue-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-blue-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-blue-500"></i>打车前往，约20分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-indigo-700 flex items-center">
+                        <i class="fas fa-moon mr-2 md:mr-3 text-2xl md:text-3xl"></i>晚上 (17:30-19:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marked-alt text-indigo-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">弄莫湖公园</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">晨曦时湖面金黄，夜幕下灯光倒映水中，周边夜市烟火气十足，可散步欣赏湖景，品尝夜市小吃。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.855000,24.017000&name=弄莫湖公园&src=mypage')" 
+                                        class="nav-btn bg-indigo-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                        <div class="mt-3 md:mt-4 bg-indigo-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-indigo-500"></i>打车前往，约10分钟</p>
+                        </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">瑞丽屿桥民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 320-550元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">拥军主题民宿，院子里有温顺的梅花鹿可互动拍照，配备健身房、私人电影院、棋牌室，会议室可容纳小型团建。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">瑞丽玉瑞花园民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 499-899元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">独栋别墅酒店，内设恒温游泳池和温泉泡池，全屋智能语音控制，房间配备洗衣机和冰箱。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">瑞丽宜家快捷酒店</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 120-200元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">连锁经济型酒店，房间干净整洁，提供自助早餐，地理位置优越，步行可到步行街和夜市。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Day 6 Content -->
+        <div id="day6" class="day-content ">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-orange-500">
+                    <span class="bg-orange-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 6</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">畹町边关历史与文化体验</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 瑞丽 → 畹町</span>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 md:p-4 mb-4 md:mb-6 rounded-r-lg">
+                    <p class="text-yellow-800 text-sm md:text-base"><i class="fas fa-bus mr-2"></i><strong>跨区域交通：</strong>瑞丽到畹町：乘坐中巴，约30分钟，票价10元左右。</p>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:30-12:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">畹町边关文化园 ⭐3A景区</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">"一街十三馆"边关博物馆群，展示抗战历史、翡翠珠宝、邮票钱币等，能了解边关文化和历史。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.084722,24.104167&name=畹町边关文化园 ⭐3A景区&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-orange-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-orange-500"></i>从瑞丽乘坐中巴到畹町，再步行前往景点，约5分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (12:30-13:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">聋子烧烤</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：烤鸡、牛肉</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">本地大哥推荐的"祖师爷"级烧烤店，烤鸡和牛肉调味恰到好处，需提前排队。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.085000,24.104000&name=聋子烧烤&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午 (14:00-17:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">畹町桥</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约1.5小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">二战期间运送援华物资的钢架桥，桥头茶馆有三代人经营，充满历史感，可在茶馆喝茶，感受历史氛围。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.082500,24.106944&name=畹町桥&src=mypage')" 
+                                        class="nav-btn bg-blue-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-blue-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-blue-500"></i>步行前往，约10分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-indigo-700 flex items-center">
+                        <i class="fas fa-moon mr-2 md:mr-3 text-2xl md:text-3xl"></i>晚上 (17:30-18:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-utensils text-indigo-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">友缘景颇饭庄</h4>
+                                
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：景颇族手抓饭</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">主打景颇族手抓饭和各类炒菜，风味正宗，适合多人聚餐。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.084000,24.105000&name=友缘景颇饭庄&src=mypage')" 
+                                        class="nav-btn bg-indigo-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">畹町·Artstay民国印象花园艺墅</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 280-450元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">原民国中央银行畹町分行旧址改造，保留民国风格建筑，内有露天水景花园和火山石装饰，餐厅提供特色中餐。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">畹町老兵客栈</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 150-250元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">由抗战老兵后代经营，充满红色记忆元素，提供免费骑行服务，可骑行游览边关文化园和畹町桥。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">畹町田园民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 100-180元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">当地农户自家小院改造，提供农家饭菜，可参与农活体验，老板会推荐本地人常去的烧烤店。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Day 7 Content -->
+        <div id="day7" class="day-content ">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-red-500">
+                    <span class="bg-red-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 7</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">腾冲古镇与地热奇观</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 畹町 → 腾冲</span>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 md:p-4 mb-4 md:mb-6 rounded-r-lg">
+                    <p class="text-yellow-800 text-sm md:text-base"><i class="fas fa-bus mr-2"></i><strong>跨区域交通：</strong>畹町到腾冲：先乘坐中巴到芒市，再从芒市乘坐大巴到腾冲，或者选择包车直达，全程约3.5小时。</p>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-red-50 to-red-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-red-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:30-12:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-red-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">和顺古镇</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">600年历史古镇，明清建筑保存完好，艾思奇故居、和顺图书馆等充满人文气息，可漫步古镇，感受宁静氛围。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.450833,25.016667&name=和顺古镇&src=mypage')" 
+                                        class="nav-btn bg-red-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-red-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-red-500"></i>从畹町包车到腾冲和顺古镇，约3.5小时</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (12:30-13:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">老贾家火烧肉米线</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：火烧肉米线</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">本地特色美食，火烧肉皮酥脆、肉鲜嫩，搭配酸辣灵魂酱料，味道正宗。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.452000,25.018000&name=老贾家火烧肉米线&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午 (14:00-17:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">热海大滚锅</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">腾冲地热代表景点，水温达97℃，可在周边蒸红薯、土豆，还有鼓鸣泉、眼镜泉等温泉奇观，还可以体验温泉泡脚。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.442500,25.084722&name=热海大滚锅&src=mypage')" 
+                                        class="nav-btn bg-blue-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-blue-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-blue-500"></i>打车前往，约20分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-indigo-700 flex items-center">
+                        <i class="fas fa-moon mr-2 md:mr-3 text-2xl md:text-3xl"></i>晚上 (18:30-19:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-utensils text-indigo-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">牛牛家铜瓢牛肉</h4>
+                                
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：铜瓢牛肉</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">牛肉久煮不柴不烂，薄荷搭配牛肉可中和油腻，人气火爆需提前排队。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.451000,25.017000&name=牛牛家铜瓢牛肉&src=mypage')" 
+                                        class="nav-btn bg-indigo-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">数数·书局</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 800-1500元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">三分之二面积是图书馆公共区域，可免费借阅书籍，房间设计简约舒适，配有独立观景阳台。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">腾冲颐舍全景温泉客栈</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 400-800元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">设计简朴大方，充分利用当地木材和火山石，可极目古镇风光，远望苍山白云，提供温泉私汤服务。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">腾冲心玥素影度假客栈</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 500-900元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">屋内雅致脱俗，推窗可见远山、稻田，以百年手工银饰和名家字画为亮点，充满文化氛围。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Day 8 Content -->
+        <div id="day8" class="day-content ">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-red-500">
+                    <span class="bg-red-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 8</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">腾冲火山与湿地之旅</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 腾冲</span>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-red-50 to-red-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-red-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:30-12:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-red-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">火山地质公园</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">汇聚99座新生代火山，大空山、小空山可近距离观看火山口，可选择乘热气球俯瞰火山群，体验刺激。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.348333,25.211111&name=火山地质公园&src=mypage')" 
+                                        class="nav-btn bg-red-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-red-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-red-500"></i>打车前往，约30分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (12:30-13:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">邓氏大薄片</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：大薄片</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">特色"媳妇菜"，肉片QQ弹弹，搭配酸辣蘸水，口感丰富。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.453000,25.019000&name=邓氏大薄片&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午 (14:00-17:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">北海湿地</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">火山喷发造就的"漂浮草原"，草排厚达2米，可乘船或踏草排游览，感受独特的湿地景观。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.403611,25.120833&name=北海湿地&src=mypage')" 
+                                        class="nav-btn bg-blue-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-blue-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-blue-500"></i>打车前往，约20分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-indigo-700 flex items-center">
+                        <i class="fas fa-moon mr-2 md:mr-3 text-2xl md:text-3xl"></i>晚上 (18:00-19:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-utensils text-indigo-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">腾药宴</h4>
+                                
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：乾坤八宝饭、清肺玉斛炖土鸡、茯苓松鼠鱼</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">药食同源，菜品美味又养生，具有特色。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.454000,25.020000&name=腾药宴&src=mypage')" 
+                                        class="nav-btn bg-indigo-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">陈家别院</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 600-1200元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">原木梁柱建筑，隐在林间，推窗绿意盎然，庭院种植多种花卉，充满自然气息，提供手冲咖啡和腾冲特色早餐。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">数数·书局</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 800-1500元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">三分之二面积是图书馆公共区域，可免费借阅书籍，房间设计简约舒适，配有独立观景阳台。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">云上时间民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 550-1000元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">日式原木风格，温泉入户，每个房间都有观景大泡池，提供手冲咖啡和希尔顿同款床垫。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Day 9 Content -->
+        <div id="day9" class="day-content ">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-red-500">
+                    <span class="bg-red-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 9</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">腾冲银杏村与云峰山风光</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 腾冲</span>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-red-50 to-red-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-red-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:30-12:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-red-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">银杏村（固东镇）</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">1月虽然不是银杏金黄的季节，但冬季银杏村也有独特的韵味，可漫步村落，感受宁静的乡村氛围，欣赏古银杏与古朴小屋的景致。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.669444,25.265556&name=银杏村（固东镇）&src=mypage')" 
+                                        class="nav-btn bg-red-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-red-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-red-500"></i>打车前往，约40分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (12:30-13:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">银杏村农家菜馆</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：白果炖鸡、腾冲饵丝</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">以本地食材为主，菜品具有乡村风味，味道鲜美。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.670000,25.266000&name=银杏村农家菜馆&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午 (14:00-17:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">云峰山</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">海拔2449米，3000多级石阶旁原始森林苍翠，登顶可看云海翻涌，景色壮观，需要一定的体力。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.714722,25.196111&name=云峰山&src=mypage')" 
+                                        class="nav-btn bg-blue-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-blue-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-blue-500"></i>打车前往，约30分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-indigo-700 flex items-center">
+                        <i class="fas fa-moon mr-2 md:mr-3 text-2xl md:text-3xl"></i>晚上 (18:30-19:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-utensils text-indigo-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">云上时间民宿餐厅</h4>
+                                
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：腾冲特色菜品</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">民宿餐厅菜品口味不错，环境优雅，可品尝本地美食。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=98.455000,25.021000&name=云上时间民宿餐厅&src=mypage')" 
+                                        class="nav-btn bg-indigo-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">云上时间民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 550-1000元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">日式原木风格，温泉入户，每个房间都有观景大泡池，提供手冲咖啡和希尔顿同款床垫，体验舒适。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition border-2 border-purple-400">
+                            <h4 class="font-bold text-base md:text-lg mb-2">腾冲玛御谷悦榕庄</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 1800-3500元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">五星级奢华温泉酒店，每间客房配有私属温泉浴池，提供瑜伽课程和冥想指导，享受养生度假体验。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">腾冲自在悬崖酒店</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 600-1200元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">采用当地火山石、竹编、老物件打造，充满艺术气息，房间可俯瞰山谷田园风光，提供私汤温泉服务。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Day 10 Content -->
+        <div id="day10" class="day-content ">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-teal-500">
+                    <span class="bg-teal-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 10</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">盈江自然生态之旅</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 腾冲 → 盈江</span>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 md:p-4 mb-4 md:mb-6 rounded-r-lg">
+                    <p class="text-yellow-800 text-sm md:text-base"><i class="fas fa-bus mr-2"></i><strong>跨区域交通：</strong>腾冲到盈江：乘坐大巴，约2.5小时，票价40元左右。</p>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-teal-50 to-teal-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-teal-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:30-12:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-teal-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">湿地公园芦苇荡</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">1月芦苇荡呈现出银白色的穗浪，与蓝天相映，穿素色长裙逆光拍摄剪影超美，可漫步欣赏自然景观。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.933333,24.698889&name=湿地公园芦苇荡&src=mypage')" 
+                                        class="nav-btn bg-teal-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-teal-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-teal-500"></i>从腾冲乘坐大巴到盈江，再打车前往景点，约20分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (12:30-13:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">傣傈园傈僳族手抓饭</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：手抓饭、火烧猪</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">菜品丰富，手抓饭搭配火烧猪、烀螺丝等特色菜，人均二三十性价比高。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.932000,24.700000&name=傣傈园傈僳族手抓饭&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午 (14:00-17:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">弄璋竹桥</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2小时</p>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">竹篾编织的质朴竹桥，雨后初晴雾气升腾时极具诗意，低角度拍摄倒影最佳，可拍照打卡，感受自然之美。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.756111,24.701389&name=弄璋竹桥&src=mypage')" 
+                                        class="nav-btn bg-blue-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-3 md:mt-4 bg-blue-50 p-2.5 md:p-3 rounded-lg">
+                            <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-car mr-2 text-blue-500"></i>打车前往，约30分钟</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-indigo-700 flex items-center">
+                        <i class="fas fa-moon mr-2 md:mr-3 text-2xl md:text-3xl"></i>晚上 (18:00-19:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-utensils text-indigo-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">三食六计</h4>
+                                
+                                <p class="text-gray-700 mb-2 text-sm md:text-base">🍽️ 推荐：冬阴功炒面、蒜蓉花甲、西番莲汁</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">东南亚风味餐厅，58元双人套餐性价比高，适合情侣约会或朋友聚餐。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.934000,24.701000&name=三食六计&src=mypage')" 
+                                        class="nav-btn bg-indigo-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">石梯村树下民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 300-500元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">专为观鸟爱好者设计，配备观鸟向导服务，房间内有专门的修图书桌和台灯，方便整理当天拍摄的鸟类照片。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">盈江云南之蓝民宿</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 298-500元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">纯天然温泉汤池，坚果房可躺在床上看星空，一楼1.5米床+楼上榻榻米，适合家庭入住，环境清幽。</p>
+                        </div>
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition ">
+                            <h4 class="font-bold text-base md:text-lg mb-2">盈江诗密娃底露营地</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 50-300元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">露营位50元/晚，小木屋200-300元/晚，可体验草原烧烤和星空观影活动，周边风景优美适合徒步和摄影。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Day 11 Content -->
+        <div id="day11" class="day-content ">
+            <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-8 mb-4 md:mb-8">
+                <div class="flex items-center mb-4 md:mb-8 pb-4 md:pb-6 border-b-4 border-teal-500">
+                    <span class="bg-teal-500 text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-base md:text-lg">Day 11</span>
+                    <h2 class="text-2xl md:text-4xl font-bold ml-2 md:ml-4 text-gray-800">盈江观鸟与返程</h2>
+                    <span class="ml-auto text-gray-500 text-sm md:text-lg">📍 盈江</span>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-teal-50 to-teal-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-teal-700 flex items-center">
+                        <i class="fas fa-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>上午 (8:00-11:00)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-teal-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">中国犀鸟谷（自选）</h4>
+                                <p class="text-gray-700 mb-2 text-sm md:text-base"><i class="far fa-clock mr-2"></i>游览时长：约2.5小时</p>
+                                
+                                <p class="text-blue-600 mb-2 text-sm md:text-base">📝 自选项目</p>
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">如果对观鸟有兴趣，可前往中国犀鸟谷，这里是观鸟爱好者的天堂，可以看到珍稀的犀鸟和其他鸟类。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.590556,24.726944&name=中国犀鸟谷（自选）&src=mypage')" 
+                                        class="nav-btn bg-teal-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-orange-700 flex items-center">
+                        <i class="fas fa-utensils mr-2 md:mr-3 text-2xl md:text-3xl"></i>中午 (11:30-12:30)
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-orange-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">盈江县城特色餐厅</h4>
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">在县城品尝最后一顿云南美食，可选择当地特色餐厅。</p>
+
+                                <button onclick="window.open('https://uri.amap.com/navigation?to=97.933000,24.702000&name=盈江县城特色餐厅&src=mypage')" 
+                                        class="nav-btn bg-orange-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold shadow-md text-sm md:text-base w-full md:w-auto">
+                                    <i class="fas fa-location-arrow mr-2"></i>导航前往
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-4 md:p-6 mb-4 md:mb-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-cloud-sun mr-2 md:mr-3 text-2xl md:text-3xl"></i>下午
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 md:p-5 shadow-md">
+                        <div class="flex items-start">
+                            <i class="fas fa-mountain text-blue-500 text-2xl md:text-3xl mt-1 mr-3 md:mr-4"></i>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-lg md:text-xl mb-2 md:mb-3 text-gray-800">返程准备</h4>
+                                
+                                
+                                <p class="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">从盈江返回出发地，结束11天的云南滇西边境深度游。建议预留充足时间前往机场或车站。</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-4 md:p-6">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-5 text-green-700 flex items-center">
+                        <i class="fas fa-bed mr-2 md:mr-3 text-2xl md:text-3xl"></i>住宿推荐
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-3 md:gap-5">
+
+                        <div class="bg-white p-4 md:p-5 rounded-xl shadow-md hover:shadow-lg transition border-2 border-yellow-400">
+                            <h4 class="font-bold text-base md:text-lg mb-2">盈江华冠酒店</h4>
+                            <p class="text-sm text-green-600 font-semibold mb-2">💰 180-300元/晚</p>
+                            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">经济型酒店，房间干净整洁，提供免费自助早餐，周边美食云集，可品尝到本地特色小吃，交通便利便于返程。</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 费用总览 -->
+    <div class="max-w-7xl mx-auto px-3 md:px-4 py-6 md:py-12">
+        <div class="bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white rounded-2xl p-4 md:p-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-center">💰 预算范围预估（每人）</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 mb-4 md:mb-6">
+                <div class="bg-white/20 backdrop-blur-sm p-3 md:p-4 rounded-lg text-center">
+                    <i class="fas fa-plane-departure text-2xl md:text-3xl mb-2"></i>
+                    <h3 class="font-semibold text-base md:text-lg">交通</h3>
+                    <p class="text-xl md:text-2xl font-bold">约1500元</p>
+                    <p class="text-xs md:text-sm opacity-80">往返+市内</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm p-3 md:p-4 rounded-lg text-center">
+                    <i class="fas fa-bed text-2xl md:text-3xl mb-2"></i>
+                    <h3 class="font-semibold text-base md:text-lg">住宿</h3>
+                    <p class="text-xl md:text-2xl font-bold">约3500元</p>
+                    <p class="text-xs md:text-sm opacity-80">11晚住宿</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm p-3 md:p-4 rounded-lg text-center">
+                    <i class="fas fa-utensils text-2xl md:text-3xl mb-2"></i>
+                    <h3 class="font-semibold text-base md:text-lg">餐饮</h3>
+                    <p class="text-xl md:text-2xl font-bold">约1000元</p>
+                    <p class="text-xs md:text-sm opacity-80">特色美食</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm p-3 md:p-4 rounded-lg text-center">
+                    <i class="fas fa-ticket-alt text-2xl md:text-3xl mb-2"></i>
+                    <h3 class="font-semibold text-base md:text-lg">门票</h3>
+                    <p class="text-xl md:text-2xl font-bold">约500元</p>
+                    <p class="text-xs md:text-sm opacity-80">景点门票</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm p-3 md:p-4 rounded-lg text-center">
+                    <i class="fas fa-shopping-bag text-2xl md:text-3xl mb-2"></i>
+                    <h3 class="font-semibold text-base md:text-lg">其他</h3>
+                    <p class="text-xl md:text-2xl font-bold">约500元</p>
+                    <p class="text-xs md:text-sm opacity-80">购物娱乐</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <p class="text-2xl md:text-3xl font-bold mb-2">总预算：7000-9000元/人</p>
+                <p class="text-sm md:text-base opacity-80">根据消费档次不同，预算会有所差异</p>
+            </div>
+        </div>
+
+        <!-- 实用信息 -->
+        <div class="grid md:grid-cols-2 gap-4 md:gap-6 mt-6 md:mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-4 md:p-6">
+                <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 flex items-center text-purple-600">
+                    <i class="fas fa-calendar-check mr-2"></i>最佳旅游季节
+                </h3>
+                <p class="text-gray-700 mb-3 text-sm md:text-base">11月-2月是云南的暖冬季节，滇西边境地区气温适中，平均气温在15-25℃之间，天气晴朗，降水较少，适合旅游。</p>
+                <p class="text-gray-700 text-sm md:text-base">1月还能避开春节旅游高峰，体验更舒适的旅程。</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-4 md:p-6">
+                <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 flex items-center text-pink-600">
+                    <i class="fas fa-suitcase-rolling mr-2"></i>出行前准备
+                </h3>
+                <ul class="text-gray-700 space-y-2 text-sm md:text-base">
+                    <li><i class="fas fa-tshirt text-pink-500 mr-2"></i><strong>衣物：</strong>早晚温差大，需携带薄外套和长袖</li>
+                    <li><i class="fas fa-sun text-pink-500 mr-2"></i><strong>防晒：</strong>SPF50+防晒霜、墨镜、帽子、围巾</li>
+                    <li><i class="fas fa-pills text-pink-500 mr-2"></i><strong>药品：</strong>常用药品（感冒、肠胃、消炎、晕车）</li>
+                    <li><i class="fas fa-mobile text-pink-500 mr-2"></i><strong>其他：</strong>充电器、移动电源、相机</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="bg-gray-800 text-white py-6 md:py-8 mt-6 md:mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-base md:text-lg mb-2">© 2026 云南滇西边境11天深度游计划</p>
+            <p class="text-xs md:text-sm opacity-75">涵盖芒市、瑞丽、畹町、腾冲、盈江五大特色地点 | 东南亚风情·边境文化·自然生态</p>
+        </div>
+    </div>
+
+    <script>
+        function showDay(dayNum) {
+            const allContents = document.querySelectorAll('.day-content');
+            allContents.forEach(content => content.classList.remove('active'));
+            
+            const allTabs = document.querySelectorAll('.day-tab');
+            allTabs.forEach(tab => tab.classList.remove('active'));
+            
+            const targetContent = document.getElementById('day' + dayNum);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+            
+            event.target.classList.add('active');
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
